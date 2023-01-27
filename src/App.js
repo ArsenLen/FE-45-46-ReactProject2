@@ -2,33 +2,36 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [left, setLeft] = useState(0)
-  const [right, setRight] = useState(0)
-  const [allClicks, setAllClicks] = useState([])
-  const handleLeftClick = () => {
-    setLeft(left + 1) // инкрементируем left
-    setAllClicks(allClicks.concat('L')) // allClicks.concat('L'); [] => ['L']; ['L'] => ['L','L']
-  }
-  const handleRightClick = () => {
-    setRight(right + 1)  // инкрементируем right
-    setAllClicks([...allClicks, 'R'])
-  }
+  const [notes, setNotes] = useState([
+    {
+      id: 1,
+      text: "React Router DOM"
+    },
+    {
+      id: 2,
+      text: "Axios vs Fetch"
+    }
+  ])
   return (
     <div className="App">
-      {left}
-      <button onClick={handleLeftClick}>
-        left
-      </button>
-      <button onClick={handleRightClick}>
-        right
-      </button>
-      {right}
-      <p>История кликов: {allClicks.join(' ')}</p>
+      <h1>Темы занятий</h1>
+      <ul>
+        {
+          notes.map(note => <li key={note.id}>{note.text}</li>)
+        }
+      </ul>
     </div>
   );
 }
 
 export default App;
+// npm i axios --save -S
+// npm i axios --save-dev -D devDependencies
+// Используя метод map отрисовать li с данными из объекта
+/*
+  ["Left", "Right"] => "Left" "Right"
+  1. Не объявлять состояние внутри циклов, условий, функций
+*/
 // .push() - мутирует состояние, добавляет к начальному массиву значение
 // .concat() - возвращает новый массив с добавленным значением
 // Задача. При нажатии на left, добавлять в массив clicks 'L', 
