@@ -2,42 +2,37 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  // const [left, setLeft] = useState(0)
-  // const [right, setRight] = useState(0)
-  const [clicks, setClicks] = useState({
-    left: 0,
-    right: 0
-  })
+  const [left, setLeft] = useState(0)
+  const [right, setRight] = useState(0)
+  const [allClicks, setAllClicks] = useState([])
   const handleLeftClick = () => {
-    const newClicks = {
-      left: clicks.left + 1,
-      right: clicks.right
-    }
-    setClicks(newClicks)
+    setLeft(left + 1) // инкрементируем left
+    setAllClicks(allClicks.concat('L')) // allClicks.concat('L'); [] => ['L']; ['L'] => ['L','L']
   }
   const handleRightClick = () => {
-    const newClicks = {
-      left: clicks.left,
-      right: clicks.right + 1
-    }
-    setClicks(newClicks)
+    setRight(right + 1)  // инкрементируем right
+    setAllClicks([...allClicks, 'R'])
   }
   return (
     <div className="App">
-      {clicks.left}
+      {left}
       <button onClick={handleLeftClick}>
         left
       </button>
-
       <button onClick={handleRightClick}>
         right
       </button>
-      {clicks.right}
+      {right}
+      <p>История кликов: {allClicks.join(' ')}</p>
     </div>
   );
 }
 
 export default App;
+// .push() - мутирует состояние, добавляет к начальному массиву значение
+// .concat() - возвращает новый массив с добавленным значением
+// Задача. При нажатии на left, добавлять в массив clicks 'L', 
+  // При нажатии на right, добавлять в массив clicks 'R'
 // Задача. При нажатии на кнопку left, менять свойство left на 1
 // При нажатии на right менять свойства right на 1 
 
@@ -76,4 +71,11 @@ export default App;
     JS
     clicks = clicks.left + 1
   */
+
+    /*
+      const arr = [10, 15, 20]
+      const greeting = "Hello"
+      arr.concat(greeting) // [10, 15, 20, "Hello"]
+      [...arr, ...greeting] // [10, 15, 20, 'H', 'e', 'l', 'l']
+    */
 
