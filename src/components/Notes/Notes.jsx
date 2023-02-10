@@ -22,6 +22,7 @@ const Notes = () => {
 
     return (
       <div className={s.wrapper}>
+        <h1>Темы занятий</h1>
         {notes.map((note) => (
             <Note key={note.id} title={note.text} descr={note.descr} />
         ))}

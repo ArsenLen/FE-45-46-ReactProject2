@@ -1,17 +1,39 @@
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Notes from './components/Notes/Notes'
+import Header from './components/Header/Header';
+import Notes from './components/Notes/Notes';
+import About from './components/About/About';
+import Contacts from './components/Contacts/Contacts';
 
 function App() {
   return (
     <div className="App">
-      <h1>Темы занятий</h1>
-      <Notes />
+      <Header />
+      <Routes>
+        <Route element={<Notes />} path="/" />
+        <Route element={<About />} path="/about" />
+        <Route element={<Contacts />} path="/contacts" />
+        <Route element={<img src="https://feature-sliced.design/assets/ideal-img/visual_schema.d700567.1030.jpg" alt="" /> }
+        path="/about/info"
+        />
+      </Routes>
     </div>
   );
 }
-
+// 
 export default App;
+// Создать новый компонент Contacts, прокинуть туда <h1>Contact</h1>
+// Зарегистировать новый роут, при переходе на который отображать компонент Contacts
+// Создать ссылку, при нажатию на которую, переносить пользователя на ссылку /contacts
+
+// Что хотим, чтобы пользователь увидел, когда перешел на конкретный роут(ссылку)?
+// Route element="Notes" - мы хотим увидеть component Notes
+// path="/about" - когда переходим на /about
+
+
+// / - главная страница 
+
 // npm i axios --save -S
 // npm i axios --save-dev -D devDependencies
 // Используя метод map отрисовать li с данными из объекта
