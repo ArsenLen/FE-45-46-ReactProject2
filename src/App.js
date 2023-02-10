@@ -1,25 +1,12 @@
 import { useState } from 'react';
 import './App.css';
+import Notes from './components/Notes/Notes'
 
 function App() {
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      text: "React Router DOM"
-    },
-    {
-      id: 2,
-      text: "Axios vs Fetch"
-    }
-  ])
   return (
     <div className="App">
       <h1>Темы занятий</h1>
-      <ul>
-        {
-          notes.map(note => <li key={note.id}>{note.text}</li>)
-        }
-      </ul>
+      <Notes />
     </div>
   );
 }

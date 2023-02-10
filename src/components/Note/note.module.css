@@ -1,0 +1,12 @@
+.note {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+.title {
+    font-size: 28px;
+}
+.descr {
+    font-size: 18px;
+}
