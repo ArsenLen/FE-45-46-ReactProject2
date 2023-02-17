@@ -8,7 +8,8 @@ const Header = () => {
             <nav>
                 <Link to="/"> Главная </Link>
                 <Link to="/about"> О нас </Link>
-                <Link to="/contacts"> Ссылка на страницу contacts </Link>
+                <Link to="/contacts"> Контакты </Link>
+                <Link to="/addnote"> Добавить пост </Link>
             </nav>
         </header>
     );

@@ -1,0 +1,28 @@
+.wrapper {
+    padding: 40px 0;
+}
+.form {
+    width: 60%;
+    margin: auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.control {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+.submit {
+    width: 50%;
+    margin: auto;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+}

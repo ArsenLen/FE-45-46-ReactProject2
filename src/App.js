@@ -5,6 +5,8 @@ import Header from './components/Header/Header';
 import Notes from './components/Notes/Notes';
 import About from './components/About/About';
 import Contacts from './components/Contacts/Contacts';
+import SingleNotePage from './pages/SingleNotePage/SingleNotePage';
+import AddNotePage from './pages/AddNotePage/AddNotePage';
 
 function App() {
   return (
@@ -14,15 +16,19 @@ function App() {
         <Route element={<Notes />} path="/" />
         <Route element={<About />} path="/about" />
         <Route element={<Contacts />} path="/contacts" />
-        <Route element={<img src="https://feature-sliced.design/assets/ideal-img/visual_schema.d700567.1030.jpg" alt="" /> }
-        path="/about/info"
-        />
+        <Route element={<SingleNotePage />} path="/note/:id" />
+        <Route element={<AddNotePage />} path="/addnote" />
       </Routes>
     </div>
   );
 }
 // 
 export default App;
+
+// /note/id - 
+// /note/:id
+// /note/21
+// /note/15
 // Создать новый компонент Contacts, прокинуть туда <h1>Contact</h1>
 // Зарегистировать новый роут, при переходе на который отображать компонент Contacts
 // Создать ссылку, при нажатию на которую, переносить пользователя на ссылку /contacts
