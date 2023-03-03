@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
 import Note from '../Note/Note';
 import s from './notes.module.css'
-
-const fetchNotes = () => {
-    return axios.get('http://localhost:3001/notes')
-}
+import noteService from '../../services/notes'
 
 const Notes = () => {
     const [notes, setNotes] = useState([])
 
     useEffect(() => {
-        fetchNotes()
+        noteService
+            .getAll()
             .then(res => {
                 setNotes(res.data)
+                // UI логика
             })
             .catch(err => {
+                // toast(err)
                 console.log(err)
             })
     }, [])

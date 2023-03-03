@@ -4,37 +4,44 @@
       "id": 1,
       "text": "React Router DOM",
       "descr": "Lorem.............",
-      "tasks": "10"
+      "tasks": "10",
+      "status": "pending"
     },
     {
       "id": 2,
       "text": "Axios vs Fetch",
       "descr": "Lorem.............",
-      "tasks": "8"
+      "tasks": "8",
+      "status": "published"
     },
     {
-      "text": "useEffect",
+      "text": "useEffect 3",
       "descr": "работа хука useEffect",
-      "tasks": "7",
+      "tasks": "11",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "email": "user1@mail.ru",
+      "password": "$2a$10$mnEPgDh5jm7cnpVbiKuQqecSlyBnajVRu87c7/Zw33QSCKQaDhfmW",
+      "name" : "Arsen Iusupov",
+      "id": 1
+    },
+    {
+      "email": "user2@mail.ru",
+      "password": "$2a$10$gcPqowzJi7IBOzoGw6co3e15wSTLoRy6eZjOmOJcUbDf6Cv8jdNnS",
+      "id": 2
+    },
+    {
+      "email": "user3@mail.ru",
+      "password": "$2a$10$SnvEu8aZ1QAbQTILi5b.Q.MzWclVls5id.lO7snSuGcKznlDpA5DK",
       "id": 3
     },
     {
-      "text": "test",
-      "descr": "test",
-      "tasks": "test",
+      "email": "user10@mail.ru",
+      "password": "$2a$10$wcGE20CInWvclAxRsY9HmOI7SQq74AXamrxB6ujiDNfxJRSTCrCNG",
       "id": 4
-    },
-    {
-      "text": "test",
-      "descr": "test",
-      "tasks": "10",
-      "id": 5
-    },
-    {
-      "text": "test",
-      "descr": "tseet",
-      "tasks": "235",
-      "id": 6
     }
   ]
 }

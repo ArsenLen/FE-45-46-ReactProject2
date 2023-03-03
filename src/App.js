@@ -7,6 +7,8 @@ import About from './components/About/About';
 import Contacts from './components/Contacts/Contacts';
 import SingleNotePage from './pages/SingleNotePage/SingleNotePage';
 import AddNotePage from './pages/AddNotePage/AddNotePage';
+import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route element={<Contacts />} path="/contacts" />
         <Route element={<SingleNotePage />} path="/note/:id" />
         <Route element={<AddNotePage />} path="/addnote" />
+        <Route element={<RegistrationPage />} path="/register" />
+        <Route element={<LoginPage />} path="/login" />
       </Routes>
     </div>
   );
