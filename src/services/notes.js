@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:3002/notes'
+const URL = 'http://localhost:3001/notes'
 // этот модуль отвечает за слой отправки запроса
 // получение всех notes
 const getAll = () => {

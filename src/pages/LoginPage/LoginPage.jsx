@@ -1,7 +1,10 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { loginSuccess } from '../../redux/userSlice';
 
 const login = (user) => {
     return axios.post('http://localhost:3001/login', user)
@@ -11,6 +14,8 @@ const LoginPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -24,7 +29,8 @@ const LoginPage = () => {
                 setName(res.data.user.name)
                 setEmail('')
                 setPassword('')
-                toast("успешно вошли")
+                navigate('/profile')
+                dispatch(loginSuccess(res.data.user)) // {name, email}
             })
             .catch(err => {
                 console.log(err)
@@ -57,7 +63,7 @@ const LoginPage = () => {
                     onChange={e => setPassword(e.target.value)} 
                 />
             </div>
-            <input type="submit" value="Зарегистрироваться"/>
+            <input type="submit" value="Войти"/>
             <ToastContainer autoClose={500} theme="light" hideProgressBar={true} />
         </form>
         </>

@@ -9,6 +9,7 @@ import SingleNotePage from './pages/SingleNotePage/SingleNotePage';
 import AddNotePage from './pages/AddNotePage/AddNotePage';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route element={<AddNotePage />} path="/addnote" />
         <Route element={<RegistrationPage />} path="/register" />
         <Route element={<LoginPage />} path="/login" />
+        <Route element={<ProfilePage />} path="/profile" />
       </Routes>
     </div>
   );
